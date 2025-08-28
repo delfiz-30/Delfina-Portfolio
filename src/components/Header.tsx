@@ -25,11 +25,16 @@ const Header = () => {
 
       <div className={`relative z-10 text-center max-w-4xl mx-auto px-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Profile Image Placeholder */}
-        <div className="w-48 h-48 mx-auto mb-8 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 cursor-pointer animate-bounce-slow overflow-hidden border-4 border-white/30">
+        <div className="w-56 h-56 mx-auto mb-8 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 cursor-pointer animate-bounce-slow overflow-hidden border-4 border-white/30">
           <img 
             src="https://i.postimg.cc/Jnyh1N87/foto-de-perfil-de-Linkedin.jpg" 
             alt="Delfina Agustina Zapata Peres"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              console.log('Error loading image:', e);
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
+            onLoad={() => console.log('Image loaded successfully')}
           />
         </div>
         
