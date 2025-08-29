@@ -46,7 +46,7 @@ const Header = () => {
         </h2>
         
         <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed hover:text-white transition-colors duration-300">
-          Estudiante de Ingeniería Industrial | Especialista en Análisis de Datos & IA
+          Estudiante de Ingeniería Industrial | Pasante en SAP, Análisis de Datos & IA
         </p>
         
         <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm md:text-base">
