@@ -83,6 +83,31 @@ const Projects = () => {
                   <p className="text-gray-600 leading-relaxed mb-6">
                     {project.description}
                   </p>
+
+                  {/* Project Images */}
+                  <div className="mb-6">
+                    <h4 className="font-bold text-gray-800 mb-4">Diagramas del Proyecto</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors duration-300">
+                        <img 
+                          src="https://i.postimg.cc/mhnMydR6/DBdiagram-Empresas-Grupo1.jpg"
+                          alt="Diagrama entidad-relación en dbdiagram.io"
+                          className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
+                          onClick={() => window.open('https://i.postimg.cc/mhnMydR6/DBdiagram-Empresas-Grupo1.jpg', '_blank')}
+                        />
+                        <p className="text-sm text-gray-600 mt-2 text-center font-medium">Diagrama ER - dbdiagram.io</p>
+                      </div>
+                      <div className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors duration-300">
+                        <img 
+                          src="https://i.postimg.cc/8jrvKhzk/Diagrama-SSMS-Grupo1.png"
+                          alt="Implementación en SQL Server Management Studio"
+                          className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
+                          onClick={() => window.open('https://i.postimg.cc/8jrvKhzk/Diagrama-SSMS-Grupo1.png', '_blank')}
+                        />
+                        <p className="text-sm text-gray-600 mt-2 text-center font-medium">Implementación - SSMS</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Tools Used */}
