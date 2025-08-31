@@ -1,5 +1,5 @@
 import React from 'react';
-import { Folder, Clock, ArrowRight } from 'lucide-react';
+import { Database, Calendar, MapPin, ChevronRight, ExternalLink } from 'lucide-react';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -20,6 +20,28 @@ const Projects = () => {
     return () => observer.disconnect();
   }, []);
 
+  const projects = [
+    {
+      title: "Base de datos para portal de empleos – Pasantía en Artech (2025)",
+      period: "2025",
+      company: "ARTECH",
+      description: "Durante mi pasantía en Artech, participé en el diseño e implementación de una base de datos en SQL Server para un portal de empleos. El proyecto incluyó modelado en dbdiagram.io, creación de tablas y relaciones en SSMS, carga de datos de prueba y consultas SQL de validación.",
+      contributions: [
+        "Diseño del diagrama entidad–relación",
+        "Creación del script SQL con tablas, constraints y relaciones",
+        "Inserción de datos de prueba (empresas, ofertas, usuarios y postulaciones)",
+        "Consultas SQL de validación para asegurar integridad"
+      ],
+      tools: ["SQL Server", "dbdiagram.io", "SSMS"],
+      results: [
+        "Base de datos funcional y escalable para un portal de empleos",
+        "Datos cargados y validados",
+        "Consultas implementadas para empresas y postulantes"
+      ],
+      color: "blue"
+    }
+  ];
+
   return (
     <section id="projects" className="py-20 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -30,48 +52,115 @@ const Projects = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
         </div>
 
-        <div className={`flex flex-col items-center justify-center min-h-[400px] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="bg-white rounded-2xl p-12 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 border border-gray-200 text-center max-w-2xl group">
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-full p-6 w-24 h-24 mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
-              <Folder className="text-blue-600 w-full h-full group-hover:text-purple-600 transition-colors duration-300" />
+        {/* Main Project */}
+        <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          {projects.map((project, index) => (
+            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 border border-gray-200 group">
+              <div className="grid lg:grid-cols-3 gap-8">
+                {/* Project Header */}
+                <div className="lg:col-span-2">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="bg-blue-100 rounded-full p-3 group-hover:bg-blue-200 transition-colors duration-300">
+                      <Database className="text-blue-600 group-hover:scale-110 transition-transform duration-300" size={28} />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                        <div className="flex items-center gap-2">
+                          <Calendar size={16} />
+                          <span className="font-medium">{project.period}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin size={16} />
+                          <span className="font-medium">{project.company}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Tools Used */}
+                <div className="bg-gray-50 rounded-xl p-6">
+                  <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
+                    <ExternalLink size={18} className="text-blue-600" />
+                    Herramientas Utilizadas
+                  </h4>
+                  <div className="space-y-2">
+                    {project.tools.map((tool, toolIndex) => (
+                      <span 
+                        key={toolIndex}
+                        className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2 hover:bg-blue-200 hover:scale-105 transition-all duration-300 cursor-pointer"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Contributions */}
+              <div className="mt-8 grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="font-bold text-gray-800 mb-4">Mi Aporte</h4>
+                  <div className="space-y-3">
+                    {project.contributions.map((contribution, contribIndex) => (
+                      <div key={contribIndex} className="flex items-start gap-3">
+                        <ChevronRight size={16} className="text-blue-600 mt-1 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span className="text-gray-600">{contribution}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-gray-800 mb-4">Resultados</h4>
+                  <div className="space-y-3">
+                    {project.results.map((result, resultIndex) => (
+                      <div key={resultIndex} className="flex items-start gap-3">
+                        <ChevronRight size={16} className="text-green-600 mt-1 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span className="text-gray-600">{result}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <h3 className="text-3xl font-bold text-gray-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-              Próximamente
-            </h3>
-            
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Estoy trabajando en proyectos emocionantes que combinan análisis de datos, 
-              inteligencia artificial y optimización de procesos. ¡Pronto compartiré mis trabajos más destacados!
-            </p>
-            
-            <div className="flex items-center justify-center gap-3 text-blue-600 font-semibold group-hover:text-purple-600 transition-colors duration-300">
-              <Clock size={20} className="animate-pulse" />
-              <span>En desarrollo...</span>
-              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform duration-300" />
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div className={`grid md:grid-cols-3 gap-8 mt-12 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
-            <div className="bg-blue-100 rounded-lg p-4 mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-              <h4 className="font-bold text-blue-800 mb-2">Análisis de Datos</h4>
-              <p className="text-sm text-blue-600">Proyectos con Python, SQL y Power BI</p>
-            </div>
+        {/* Future Projects Preview */}
+        <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">Próximos Proyectos</h3>
+            <p className="text-gray-600">Áreas de enfoque para futuros desarrollos</p>
           </div>
-          
-          <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
-            <div className="bg-purple-100 rounded-lg p-4 mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-              <h4 className="font-bold text-purple-800 mb-2">Inteligencia Artificial</h4>
-              <p className="text-sm text-purple-600">Implementaciones con IA y Machine Learning</p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
+              <div className="bg-blue-100 rounded-lg p-4 mb-4 group-hover:bg-blue-200 transition-colors duration-300">
+                <h4 className="font-bold text-blue-800 mb-2">Análisis de Datos</h4>
+                <p className="text-sm text-blue-600">Proyectos con Python, SQL y Power BI</p>
+              </div>
             </div>
-          </div>
-          
-          <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
-            <div className="bg-green-100 rounded-lg p-4 mb-4 group-hover:bg-green-200 transition-colors duration-300">
-              <h4 className="font-bold text-green-800 mb-2">Optimización</h4>
-              <p className="text-sm text-green-600">Mejora de procesos industriales</p>
+            
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
+              <div className="bg-purple-100 rounded-lg p-4 mb-4 group-hover:bg-purple-200 transition-colors duration-300">
+                <h4 className="font-bold text-purple-800 mb-2">Inteligencia Artificial</h4>
+                <p className="text-sm text-purple-600">Implementaciones con IA y Machine Learning</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
+              <div className="bg-green-100 rounded-lg p-4 mb-4 group-hover:bg-green-200 transition-colors duration-300">
+                <h4 className="font-bold text-green-800 mb-2">Optimización</h4>
+                <p className="text-sm text-green-600">Mejora de procesos industriales</p>
+              </div>
             </div>
           </div>
         </div>
