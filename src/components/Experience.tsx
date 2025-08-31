@@ -61,7 +61,6 @@ const Experience = () => {
       achievements: [
         "Preparación de materiales educativos para estudiantes de medicina",
         "Asistencia en la tutoría y orientación académica de estudiantes",
-        "Apoyo en actividades prácticas de laboratorio",
         "Colaboración en la evaluación y seguimiento del progreso estudiantil"
       ],
       color: "purple"
