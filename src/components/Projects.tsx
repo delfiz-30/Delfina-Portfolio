@@ -159,36 +159,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Future Projects Preview */}
-        <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Próximos Proyectos</h3>
-            <p className="text-gray-600">Áreas de enfoque para futuros desarrollos</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
-              <div className="bg-blue-100 rounded-lg p-4 mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                <h4 className="font-bold text-blue-800 mb-2">Análisis de Datos</h4>
-                <p className="text-sm text-blue-600">Proyectos con Python, SQL y Power BI</p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
-              <div className="bg-purple-100 rounded-lg p-4 mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                <h4 className="font-bold text-purple-800 mb-2">Inteligencia Artificial</h4>
-                <p className="text-sm text-purple-600">Implementaciones con IA y Machine Learning</p>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 border border-gray-100 group">
-              <div className="bg-green-100 rounded-lg p-4 mb-4 group-hover:bg-green-200 transition-colors duration-300">
-                <h4 className="font-bold text-green-800 mb-2">Optimización</h4>
-                <p className="text-sm text-green-600">Mejora de procesos industriales</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
