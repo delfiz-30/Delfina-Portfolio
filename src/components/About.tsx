@@ -39,7 +39,7 @@ const About = () => {
             </p>
             
             <p className="text-lg text-gray-600 leading-relaxed">
-              Actualmente me desempeño como <strong>Pasante de Análisis de Datos e IA</strong> en ARTECH, 
+              Actualmente me desempeño como <strong>Pasante en SAP, Análisis de Datos e IA</strong> en ARTECH, 
               donde aplico tecnologías como Python, SQL y Power BI para resolver problemas complejos. 
               Mi objetivo es contribuir a través del análisis estratégico de datos.
             </p>
