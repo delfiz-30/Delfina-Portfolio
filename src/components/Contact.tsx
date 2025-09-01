@@ -127,7 +127,7 @@ const Contact = () => {
             </button>
             
             <p className="text-sm text-blue-200 mt-4">
-              Se abrirá tu cliente de email predeterminado
+  
             </p>
           </div>
         </div>
