@@ -40,6 +40,7 @@ const Header = () => {
         
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 leading-tight">
           Delfina Agustina
+          
         </h1>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-blue-100 hover:text-white transition-colors duration-300 leading-tight">
           Zapata Peres
