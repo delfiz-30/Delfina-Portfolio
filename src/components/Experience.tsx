@@ -26,12 +26,12 @@ const Experience = () => {
   const experiences = [
     {
       company: "ARTECH | FUNDACIÓN PESCAR",
-      position: "Pasante de SAP, Análisis de Datos e IA",
+      position: "Pasante de SAP e IA",
       period: "Jul 2025 - Presente",
       location: "Buenos Aires, Argentina",
       description: "Programa de formación intensiva para el empleo, enfocado en tecnologías y habilidades socioemocionales.",
       achievements: [
-        "Formación técnica (237 hs): SQL, Power BI, Python, Databricks y PowerApps, ABAP, Fiori, JavaScript y SAP BTP",
+        "Formación técnica (237 hs): Introdución a SQL, ABAP, Fiori, JavaScript y SAP BTP",
         "Desarrollo de habilidades interpersonales (180 hs): comunicación efectiva, trabajo en equipo, liderazgo",
         "Aplicación práctica de herramientas de IA y análisis de datos",
         "Carga horaria total: 318 horas"
