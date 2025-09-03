@@ -34,11 +34,11 @@ const Skills = () => {
     { name: "Python", icon: Code, category: "Programación" },
     { name: "JavaScript", icon: Code, category: "Programación" },
     { name: "SQL", icon: Database, category: "Base de Datos" },
-    { name: "Power BI", icon: BarChart3, category: "Análisis" },
+    { name: "ABAP", icon: Code, category: "Programación" },
     { name: "Excel", icon: BarChart3, category: "Análisis" },
     { name: "Tableau", icon: BarChart3, category: "Visualización" },
-    { name: "Databricks", icon: Database, category: "Big Data" },
-    { name: "PowerApps", icon: Monitor, category: "Desarrollo" }
+    { name: "Fiori", icon: Monitor, category: "Desarrollo" },
+    { name: "SAP BTP", icon: Database, category: "Plataforma" }
   ];
 
   const interpersonalSkills = [
@@ -69,8 +69,8 @@ const Skills = () => {
       "Base de Datos": "bg-green-500 text-green-100", 
       "Análisis": "bg-purple-500 text-purple-100",
       "Visualización": "bg-orange-500 text-orange-100",
-      "Big Data": "bg-red-500 text-red-100",
-      "Desarrollo": "bg-indigo-500 text-indigo-100"
+      "Desarrollo": "bg-indigo-500 text-indigo-100",
+      "Plataforma": "bg-red-500 text-red-100"
     };
     return colors[category as keyof typeof colors] || "bg-gray-500 text-gray-100";
   };
