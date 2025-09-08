@@ -42,16 +42,6 @@ const Projects = () => {
         "Consultas implementadas para empresas y postulantes"
       ],
       githubUrl: "https://github.com/delfiz-30/ARTECH---Fundaci-n-Pescar.git",
-      images: [
-        {
-          url: "https://i.postimg.cc/mhnMydR6/DBdiagram-Empresas-Grupo1.jpg",
-          title: "Diagrama ER - dbdiagram.io"
-        },
-        {
-          url: "https://i.postimg.cc/8jrvKhzk/Diagrama-SSMS-Grupo1.png",
-          title: "Implementación - SSMS"
-        }
-      ],
       color: "blue"
     }
   ];
@@ -127,27 +117,6 @@ const Projects = () => {
                       <p className="text-gray-600 leading-relaxed mb-8 text-lg">
                         {project.fullDescription}
                       </p>
-
-                      {/* Project Images */}
-                      <div className="mb-8">
-                        <h4 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-                          <Database size={20} className="text-blue-600" />
-                          Diagramas del Proyecto
-                        </h4>
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {project.images.map((image, imgIndex) => (
-                            <div key={imgIndex} className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors duration-300">
-                              <img 
-                                src={image.url}
-                                alt={image.title}
-                                className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
-                                onClick={() => window.open(image.url, '_blank')}
-                              />
-                              <p className="text-sm text-gray-600 mt-3 text-center font-medium">{image.title}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
 
                       {/* Tools Used */}
                       <div className="mb-8">
