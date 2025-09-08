@@ -1,5 +1,5 @@
 import React from 'react';
-import { Database, Calendar, MapPin, ChevronRight, ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
+import { Database, Calendar, MapPin, ChevronRight, ExternalLink, Github, ChevronDown, ChevronUp, Image } from 'lucide-react';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -36,6 +36,18 @@ const Projects = () => {
         "Consultas SQL de validación para asegurar integridad"
       ],
       tools: ["SQL Server", "dbdiagram.io", "SSMS"],
+      images: [
+        {
+          src: "/DiagramaSSMS_Grupo1.png",
+          alt: "Diagrama de base de datos implementado en SQL Server Management Studio",
+          title: "Diagrama SSMS - Estructura de Base de Datos"
+        },
+        {
+          src: "/DBdiagram_Empresas_Grupo1.jpg", 
+          alt: "Diagrama entidad-relación diseñado en dbdiagram.io",
+          title: "Diagrama ER - Modelado Conceptual"
+        }
+      ],
       results: [
         "Base de datos funcional y escalable para un portal de empleos",
         "Datos cargados y validados",
@@ -132,6 +144,31 @@ const Projects = () => {
                             >
                               {tool}
                             </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Project Diagrams */}
+                      <div className="mb-8">
+                        <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                          <Image size={18} className="text-purple-600" />
+                          Diagramas del Proyecto
+                        </h4>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          {project.images.map((image, imageIndex) => (
+                            <div key={imageIndex} className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors duration-300 group">
+                              <div className="aspect-video bg-white rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300 mb-3">
+                                <img 
+                                  src={image.src}
+                                  alt={image.alt}
+                                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300 cursor-pointer"
+                                  onClick={() => window.open(image.src, '_blank')}
+                                />
+                              </div>
+                              <h5 className="font-semibold text-gray-800 text-sm group-hover:text-purple-600 transition-colors duration-300">
+                                {image.title}
+                              </h5>
+                            </div>
                           ))}
                         </div>
                       </div>
