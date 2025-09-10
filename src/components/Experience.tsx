@@ -54,10 +54,10 @@ const Experience = () => {
     },
     {
       company: "UNIVERSIDAD DE BUENOS AIRES (UBA), FACULTAD DE MEDICINA",
-      position: "Ayudante de Cátedra (Ad Honorem)",
+      position: "Docente (Ad Honorem)",
       period: "Feb 2023 - Jul 2023",
       location: "Buenos Aires, Argentina",
-      description: "Colaboración voluntaria en la Cátedra 2 de Embriología, como docente.",
+      description: "Colaboración voluntaria en la Cátedra 2 de Embriología, como Ayudante de Cátedra.",
       achievements: [
         "Preparación de materiales educativos para estudiantes de medicina",
         "Asistencia en la tutoría y orientación académica de estudiantes",
