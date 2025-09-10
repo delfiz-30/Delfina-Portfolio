@@ -9,8 +9,10 @@ import {
   Globe,
   Monitor
 } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Skills = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = React.useState(false);
   const [hoveredSkill, setHoveredSkill] = React.useState<string | null>(null);
 
@@ -42,12 +44,12 @@ const Skills = () => {
   ];
 
   const interpersonalSkills = [
-    { name: "Trabajo en Equipo", icon: Users },
-    { name: "Comunicación Efectiva", icon: MessageSquare },
-    { name: "Resolución de Problemas", icon: Target },
-    { name: "Adaptabilidad", icon: Target },
-    { name: "Liderazgo", icon: Users },
-    { name: "Pensamiento Analítico", icon: BarChart3 }
+    { name: t("skills.teamwork"), icon: Users },
+    { name: t("skills.communication"), icon: MessageSquare },
+    { name: t("skills.problemSolving"), icon: Target },
+    { name: t("skills.adaptability"), icon: Target },
+    { name: t("skills.leadership"), icon: Users },
+    { name: t("skills.analyticalThinking"), icon: BarChart3 }
   ];
 
   const tools = [
@@ -59,8 +61,8 @@ const Skills = () => {
   ];
 
   const languages = [
-    { name: "Español", level: "Nativo" },
-    { name: "Inglés", level: "A2" }
+    { name: t("skills.spanish"), level: t("skills.native") },
+    { name: t("skills.english"), level: t("skills.a2") }
   ];
 
   const getSkillColor = (category: string) => {
@@ -80,7 +82,7 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Habilidades & Competencias
+            {t('skills.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
         </div>
@@ -90,7 +92,7 @@ const Skills = () => {
           <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Code className={`text-blue-600 transition-all duration-1000 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">Habilidades Técnicas</h3>
+              <h3 className="text-2xl font-bold text-gray-800">{t('skills.technical')}</h3>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
@@ -124,7 +126,7 @@ const Skills = () => {
           <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Users className={`text-purple-600 transition-all duration-1000 delay-300 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">Habilidades Interpersonales</h3>
+              <h3 className="text-2xl font-bold text-gray-800">{t('skills.interpersonal')}</h3>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
@@ -148,7 +150,7 @@ const Skills = () => {
           <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Monitor className={`text-green-600 transition-all duration-1000 delay-700 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">Herramientas Informáticas</h3>
+              <h3 className="text-2xl font-bold text-gray-800">{t('skills.tools')}</h3>
             </div>
             
             <div className="flex flex-wrap gap-3">
@@ -168,7 +170,7 @@ const Skills = () => {
           <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Globe className={`text-orange-600 transition-all duration-1000 delay-900 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">Idiomas</h3>
+              <h3 className="text-2xl font-bold text-gray-800">{t('skills.languages')}</h3>
             </div>
             
             <div className="space-y-4">
