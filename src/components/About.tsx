@@ -1,7 +1,9 @@
 import React from 'react';
 import { Target, TrendingUp, Users } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,28 +27,20 @@ const About = () => {
       <div className="max-w-6xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Sobre Mí
+            {t('about.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className={`space-y-6 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Soy estudiante de <strong>Ingeniería Industrial</strong> con formación técnica en Química y una 
-              pasión por el <strong>análisis de datos</strong> y la mejora de procesos. Mi experiencia combina 
-              conocimientos técnicos sólidos con habilidades interpersonales desarrolladas.
+            <p className="text-lg text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('about.description1') }}>
             </p>
             
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Actualmente me desempeño como <strong>Pasante en SAP, Análisis de Datos e IA</strong> en ARTECH, 
-              donde aplico tecnologías como Python, SQL, ABAP, Fiori, SAP BTP para resolver problemas complejos. 
-              Mi objetivo es contribuir a través del análisis estratégico de datos.
+            <p className="text-lg text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('about.description2') }}>
             </p>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Tengo un fuerte compromiso con el aprendizaje continuo y la excelencia, con particular interés 
-              en roles que me permitan desarrollar mis competencias técnicas y analíticas en entornos desafiantes.
+            <p className="text-lg text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('about.description3') }}>
             </p>
           </div>
 
@@ -57,9 +51,9 @@ const About = () => {
                   <Target className="text-blue-600 group-hover:scale-110 transition-transform duration-300" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Pensamiento Analítico</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('about.analytical.title')}</h3>
                   <p className="text-gray-600">
-                    Enfoque sistemático para identificar patrones y optimizar procesos mediante análisis de datos.
+                    {t('about.analytical.description')}
                   </p>
                 </div>
               </div>
@@ -71,9 +65,9 @@ const About = () => {
                   <TrendingUp className="text-green-600 group-hover:scale-110 transition-transform duration-300" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Orientación a Resultados</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('about.results.title')}</h3>
                   <p className="text-gray-600">
-                    Compromiso con la entrega de soluciones eficientes y mejoras medibles en los procesos.
+                    {t('about.results.description')}
                   </p>
                 </div>
               </div>
@@ -85,9 +79,9 @@ const About = () => {
                   <Users className="text-purple-600 group-hover:scale-110 transition-transform duration-300" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">Trabajo en Equipo</h3>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{t('about.teamwork.title')}</h3>
                   <p className="text-gray-600">
-                    Habilidades interpersonales sólidas para colaborar efectivamente en proyectos multidisciplinarios.
+                    {t('about.teamwork.description')}
                   </p>
                 </div>
               </div>

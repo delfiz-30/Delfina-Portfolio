@@ -1,7 +1,9 @@
 import React from 'react';
 import { GraduationCap, Calendar, Award, BookOpen } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Education = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -22,19 +24,19 @@ const Education = () => {
 
   const education = [
     {
-      institution: "Universidad de Buenos Aires (UBA)",
-      degree: "Ingeniería Industrial",
-      period: "2025 - Presente",
-      type: "Carrera Universitaria",
-      description: "Formación integral en optimización de procesos, gestión de operaciones y análisis cuantitativo.",
+      institution: t("education.uba.institution"),
+      degree: t("education.uba.degree"),
+      period: t("education.uba.period"),
+      type: t("education.uba.type"),
+      description: t("education.uba.description"),
       color: "blue"
     },
     {
-      institution: "EEST Nª2: \"República de Venezuela\" Merlo",
-      degree: "Técnica Química",
-      period: "2015 - 2021",
-      type: "Formación Técnica",
-      description: "Formación técnica especializada en procesos químicos y análisis de laboratorio.",
+      institution: t("education.eest.institution"),
+      degree: t("education.eest.degree"),
+      period: t("education.eest.period"),
+      type: t("education.eest.type"),
+      description: t("education.eest.description"),
       color: "green"
     }
   ];
@@ -83,7 +85,7 @@ const Education = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Educación & Certificaciones
+            {t('education.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
         </div>
@@ -92,7 +94,7 @@ const Education = () => {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <GraduationCap className={`text-blue-600 transition-all duration-1000 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={32} />
-            <h3 className="text-2xl font-bold text-gray-800">Educación Formal</h3>
+            <h3 className="text-2xl font-bold text-gray-800">{t('education.formal')}</h3>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -124,7 +126,7 @@ const Education = () => {
         <div>
           <div className="flex items-center gap-3 mb-8">
             <Award className={`text-purple-600 transition-all duration-1000 delay-500 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={32} />
-            <h3 className="text-2xl font-bold text-gray-800">Cursos & Certificaciones</h3>
+            <h3 className="text-2xl font-bold text-gray-800">{t('education.certifications')}</h3>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">

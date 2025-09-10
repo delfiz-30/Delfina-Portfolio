@@ -1,7 +1,9 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, ChevronDown } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Header = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = React.useState(false);
 
   React.useEffect(() => {
@@ -39,21 +41,20 @@ const Header = () => {
         </div>
         
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 leading-tight">
-          Delfina Agustina
-          
+          {t('header.title')}
         </h1>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6 text-blue-100 hover:text-white transition-colors duration-300 leading-tight">
-          Zapata Peres
+          {t('header.subtitle')}
         </h2>
         
         <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed hover:text-white transition-colors duration-300">
-          Estudiante de Ingeniería Industrial | Pasante en SAP e IA
+          {t('header.description')}
         </p>
         
         <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm md:text-base">
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 hover:bg-white/20 hover:scale-105 transition-all duration-300 cursor-pointer">
             <MapPin size={18} />
-            <span>Buenos Aires, Argentina</span>
+            <span>{t('header.location')}</span>
           </div>
           <a 
             href="mailto:Delfiagustina30@gmail.com"

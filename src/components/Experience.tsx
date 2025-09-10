@@ -1,7 +1,9 @@
 import React from 'react';
 import { Calendar, MapPin, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Experience = () => {
+  const { t } = useLanguage();
   const [visibleItems, setVisibleItems] = React.useState<number[]>([]);
 
   React.useEffect(() => {
@@ -25,43 +27,43 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: "ARTECH | FUNDACIÓN PESCAR",
-      position: "Pasante de SAP e IA",
-      period: "Jul 2025 - Presente",
-      location: "Buenos Aires, Argentina",
-      description: "Programa de formación intensiva para el empleo, enfocado en tecnologías y habilidades socioemocionales.",
+      company: t("experience.artech.company"),
+      position: t("experience.artech.position"),
+      period: t("experience.artech.period"),
+      location: t("experience.artech.location"),
+      description: t("experience.artech.description"),
       achievements: [
-        "Formación técnica (237 hs): Introdución a SQL, ABAP, Fiori, JavaScript y SAP BTP",
-        "Desarrollo de habilidades interpersonales (180 hs): comunicación efectiva, trabajo en equipo, liderazgo",
-        "Aplicación práctica de herramientas de IA y análisis de datos",
-        "Carga horaria total: 318 horas"
+        t("experience.artech.achievement1"),
+        t("experience.artech.achievement2"),
+        t("experience.artech.achievement3"),
+        t("experience.artech.achievement4")
       ],
       color: "blue"
     },
     {
-      company: "CHATCENTER",
-      position: "Asesora Comercial",
-      period: "Oct 2024 - Presente",
-      location: "Buenos Aires, Argentina",
-      description: "Asesoramiento especializado a clientes sobre asistencias para viajeros.",
+      company: t("experience.chatcenter.company"),
+      position: t("experience.chatcenter.position"),
+      period: t("experience.chatcenter.period"),
+      location: t("experience.chatcenter.location"),
+      description: t("experience.chatcenter.description"),
       achievements: [
-        "Asesoramiento a clientes sobre productos y servicios de asistencia al viajero",
-        "Gestión de interacciones a través de chat en vivo",
-        "Atención personalizada y eficiente",
-        "Manejo de consultas complejas y resolución de problemas"
+        t("experience.chatcenter.achievement1"),
+        t("experience.chatcenter.achievement2"),
+        t("experience.chatcenter.achievement3"),
+        t("experience.chatcenter.achievement4")
       ],
       color: "green"
     },
     {
-      company: "UNIVERSIDAD DE BUENOS AIRES (UBA), FACULTAD DE MEDICINA",
-      position: "Docente (Ad Honorem)",
-      period: "Feb 2023 - Jul 2023",
-      location: "Buenos Aires, Argentina",
-      description: "Colaboración voluntaria en la Cátedra 2 de Embriología, como Ayudante de Cátedra.",
+      company: t("experience.uba.company"),
+      position: t("experience.uba.position"),
+      period: t("experience.uba.period"),
+      location: t("experience.uba.location"),
+      description: t("experience.uba.description"),
       achievements: [
-        "Preparación de materiales educativos para estudiantes de medicina",
-        "Asistencia en la tutoría y orientación académica de estudiantes",
-        "Colaboración en la evaluación y seguimiento del progreso estudiantil"
+        t("experience.uba.achievement1"),
+        t("experience.uba.achievement2"),
+        t("experience.uba.achievement3")
       ],
       color: "purple"
     }
@@ -96,7 +98,7 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Experiencia Profesional
+            {t('experience.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
         </div>
@@ -138,7 +140,7 @@ const Experience = () => {
                       <p className="text-gray-600 mb-6 leading-relaxed">{exp.description}</p>
 
                       <div className="space-y-3">
-                        <h5 className="font-semibold text-gray-800 mb-3">Responsabilidades y Logros:</h5>
+                        <h5 className="font-semibold text-gray-800 mb-3">{t('experience.responsibilities')}</h5>
                         {exp.achievements.map((achievement, achievementIndex) => (
                           <div key={achievementIndex} className="flex items-start gap-3">
                             <ChevronRight size={16} className={`${colorClasses.text} mt-1 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300`} />

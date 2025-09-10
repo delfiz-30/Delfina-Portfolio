@@ -1,7 +1,9 @@
 import React from 'react';
 import { Database, Calendar, MapPin, ChevronRight, ExternalLink, Github, ChevronDown, ChevronUp, Image } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = React.useState(false);
   const [expandedProject, setExpandedProject] = React.useState<number | null>(null);
 
@@ -23,35 +25,35 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Base de datos para portal de empleos",
-      subtitle: "Pasantía en Artech (2025)",
-      period: "2025",
-      company: "ARTECH",
-      shortDescription: "Diseño e implementación de una base de datos en SQL Server para un portal de empleos, incluyendo modelado ER y validación de datos.",
-      fullDescription: "Durante mi pasantía en Artech, participé en el diseño e implementación de una base de datos en SQL Server para un portal de empleos. El proyecto incluyó modelado en dbdiagram.io, creación de tablas y relaciones en SSMS, carga de datos de prueba y consultas SQL de validación.",
+      title: t("projects.database.title"),
+      subtitle: t("projects.database.subtitle"),
+      period: t("projects.database.period"),
+      company: t("projects.database.company"),
+      shortDescription: t("projects.database.shortDescription"),
+      fullDescription: t("projects.database.fullDescription"),
       contributions: [
-        "Diseño del diagrama entidad–relación",
-        "Creación del script SQL con tablas, constraints y relaciones",
-        "Inserción de datos de prueba (empresas, ofertas, usuarios y postulaciones)",
-        "Consultas SQL de validación para asegurar integridad"
+        t("projects.database.contribution1"),
+        t("projects.database.contribution2"),
+        t("projects.database.contribution3"),
+        t("projects.database.contribution4")
       ],
       tools: ["SQL Server", "dbdiagram.io", "SSMS"],
       images: [
         {
           src: "/DiagramaSSMS_Grupo1.png",
           alt: "Diagrama de base de datos implementado en SQL Server Management Studio",
-          title: "Diagrama SSMS - Estructura de Base de Datos"
+          title: t("projects.diagram1.title")
         },
         {
           src: "/DBdiagram_Empresas_Grupo1.jpg", 
           alt: "Diagrama entidad-relación diseñado en dbdiagram.io",
-          title: "Diagrama ER - Modelado Conceptual"
+          title: t("projects.diagram2.title")
         }
       ],
       results: [
-        "Base de datos funcional y escalable para un portal de empleos",
-        "Datos cargados y validados",
-        "Consultas implementadas para empresas y postulantes"
+        t("projects.database.result1"),
+        t("projects.database.result2"),
+        t("projects.database.result3")
       ],
       githubUrl: "https://github.com/delfiz-30/ARTECH---Fundaci-n-Pescar.git",
       color: "blue"
@@ -67,7 +69,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Proyectos
+            {t('projects.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
         </div>
@@ -111,7 +113,7 @@ const Projects = () => {
                     
                     <div className="ml-4 flex items-center gap-2 text-blue-600 group-hover:text-purple-600 transition-colors duration-300">
                       <span className="text-sm font-medium">
-                        {isExpanded ? 'Ocultar detalles' : 'Ver detalles'}
+                        {isExpanded ? t('projects.hideDetails') : t('projects.viewDetails')}
                       </span>
                       {isExpanded ? (
                         <ChevronUp size={20} className="group-hover:scale-110 transition-transform duration-300" />
@@ -134,7 +136,7 @@ const Projects = () => {
                       <div className="mb-8">
                         <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                           <ExternalLink size={18} className="text-blue-600" />
-                          Herramientas Utilizadas
+                          {t('projects.toolsUsed')}
                         </h4>
                         <div className="flex flex-wrap gap-3">
                           {project.tools.map((tool, toolIndex) => (
@@ -152,7 +154,7 @@ const Projects = () => {
                       <div className="mb-8">
                         <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                           <Image size={18} className="text-purple-600" />
-                          Diagramas del Proyecto
+                          {t('projects.diagrams')}
                         </h4>
                         <div className="grid md:grid-cols-2 gap-6">
                           {project.images.map((image, imageIndex) => (
@@ -177,7 +179,7 @@ const Projects = () => {
                       <div className="mb-8">
                         <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
                           <Github size={18} className="text-gray-800" />
-                          Repositorio del Proyecto
+                          {t('projects.repository')}
                         </h4>
                         <a 
                           href={project.githubUrl}
@@ -186,7 +188,7 @@ const Projects = () => {
                           className="inline-flex items-center gap-3 bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                         >
                           <Github size={20} />
-                          <span>Ver Script SQL en GitHub</span>
+                          <span>{t('projects.viewScript')}</span>
                           <ExternalLink size={16} />
                         </a>
                       </div>
@@ -194,7 +196,7 @@ const Projects = () => {
                       {/* Contributions and Results */}
                       <div className="grid md:grid-cols-2 gap-8">
                         <div>
-                          <h4 className="text-xl font-bold text-gray-800 mb-4">Mi Aporte</h4>
+                          <h4 className="text-xl font-bold text-gray-800 mb-4">{t('projects.myContribution')}</h4>
                           <div className="space-y-3">
                             {project.contributions.map((contribution, contribIndex) => (
                               <div key={contribIndex} className="flex items-start gap-3">
@@ -206,7 +208,7 @@ const Projects = () => {
                         </div>
 
                         <div>
-                          <h4 className="text-xl font-bold text-gray-800 mb-4">Resultados</h4>
+                          <h4 className="text-xl font-bold text-gray-800 mb-4">{t('projects.results')}</h4>
                           <div className="space-y-3">
                             {project.results.map((result, resultIndex) => (
                               <div key={resultIndex} className="flex items-start gap-3">
