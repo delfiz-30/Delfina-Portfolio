@@ -94,10 +94,10 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 px-6 bg-gray-50">
+    <section id="experience" className="py-20 px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6 transition-colors duration-300">
             {t('experience.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
@@ -118,14 +118,14 @@ const Experience = () => {
                   <div className={`absolute left-2 md:left-6 w-4 h-4 ${colorClasses.accent} rounded-full border-4 border-white shadow-lg transition-all duration-500 ${isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'} hover:scale-125`}></div>
                   
                   <div className="ml-12 md:ml-20">
-                    <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 border-l-4 ${colorClasses.border} ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'} group`}>
+                    <div className={`bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-500 border-l-4 ${colorClasses.border} ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'} group`}>
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                         <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">{exp.position}</h3>
+                          <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 transition-colors duration-300">{exp.position}</h3>
                           <h4 className="text-xl font-semibold text-blue-600 mb-3 group-hover:text-purple-600 transition-colors duration-300">{exp.company}</h4>
                         </div>
                         
-                        <div className="flex flex-col sm:flex-row gap-4 text-sm text-gray-600">
+                        <div className="flex flex-col sm:flex-row gap-4 text-sm text-gray-600 dark:text-gray-300 transition-colors duration-300">
                           <div className="flex items-center gap-2">
                             <Calendar size={16} />
                             <span className="font-medium">{exp.period}</span>
@@ -137,14 +137,14 @@ const Experience = () => {
                         </div>
                       </div>
 
-                      <p className="text-gray-600 mb-6 leading-relaxed">{exp.description}</p>
+                      <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-300">{exp.description}</p>
 
                       <div className="space-y-3">
-                        <h5 className="font-semibold text-gray-800 mb-3">{t('experience.responsibilities')}</h5>
+                        <h5 className="font-semibold text-gray-800 dark:text-white mb-3 transition-colors duration-300">{t('experience.responsibilities')}</h5>
                         {exp.achievements.map((achievement, achievementIndex) => (
                           <div key={achievementIndex} className="flex items-start gap-3">
                             <ChevronRight size={16} className={`${colorClasses.text} mt-1 flex-shrink-0 group-hover:translate-x-1 transition-transform duration-300`} />
-                            <span className="text-gray-600">{achievement}</span>
+                            <span className="text-gray-600 dark:text-gray-300 transition-colors duration-300">{achievement}</span>
                           </div>
                         ))}
                       </div>

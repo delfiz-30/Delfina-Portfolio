@@ -78,10 +78,10 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 px-6 bg-gray-50">
+    <section id="skills" className="py-20 px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6 transition-colors duration-300">
             {t('skills.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
@@ -89,10 +89,10 @@ const Skills = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           {/* Technical Skills */}
-          <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+          <div className={`bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Code className={`text-blue-600 transition-all duration-1000 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">{t('skills.technical')}</h3>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white transition-colors duration-300">{t('skills.technical')}</h3>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
@@ -104,14 +104,14 @@ const Skills = () => {
                 return (
                   <div 
                     key={index} 
-                    className={`p-4 rounded-xl border-2 border-gray-200 hover:border-blue-300 transition-all duration-300 cursor-pointer group ${isHovered ? 'scale-105 shadow-lg' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                    className={`p-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-500 transition-all duration-300 cursor-pointer group ${isHovered ? 'scale-105 shadow-lg' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                     style={{transitionDelay: `${index * 100}ms`}}
                     onMouseEnter={() => setHoveredSkill(skill.name)}
                     onMouseLeave={() => setHoveredSkill(null)}
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <IconComponent size={24} className="text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
-                      <span className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{skill.name}</span>
+                      <IconComponent size={24} className="text-gray-600 dark:text-gray-300 group-hover:text-blue-600 transition-colors duration-300" />
+                      <span className="font-semibold text-gray-800 dark:text-white group-hover:text-blue-600 transition-colors duration-300">{skill.name}</span>
                     </div>
                     <div className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${colorClasses} group-hover:scale-110 transition-transform duration-300`}>
                       {skill.category}
@@ -123,20 +123,20 @@ const Skills = () => {
           </div>
 
           {/* Interpersonal Skills */}
-          <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+          <div className={`bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Users className={`text-purple-600 transition-all duration-1000 delay-300 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">{t('skills.interpersonal')}</h3>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white transition-colors duration-300">{t('skills.interpersonal')}</h3>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
               {interpersonalSkills.map((skill, index) => {
                 const IconComponent = skill.icon;
                 return (
-                  <div key={index} className={`bg-purple-50 rounded-xl p-4 border border-purple-100 hover:bg-purple-100 hover:scale-105 transition-all duration-300 cursor-pointer group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{transitionDelay: `${index * 100 + 300}ms`}}>
+                  <div key={index} className={`bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 border border-purple-100 dark:border-purple-800 hover:bg-purple-100 dark:hover:bg-purple-800/30 hover:scale-105 transition-all duration-300 cursor-pointer group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} style={{transitionDelay: `${index * 100 + 300}ms`}}>
                     <div className="flex items-center gap-3">
                       <IconComponent size={20} className="text-purple-600 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                      <span className="font-medium text-gray-800 text-sm group-hover:text-purple-600 transition-colors duration-300">{skill.name}</span>
+                      <span className="font-medium text-gray-800 dark:text-white text-sm group-hover:text-purple-600 transition-colors duration-300">{skill.name}</span>
                     </div>
                   </div>
                 );
@@ -147,17 +147,17 @@ const Skills = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Tools & Software */}
-          <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Monitor className={`text-green-600 transition-all duration-1000 delay-700 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">{t('skills.tools')}</h3>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white transition-colors duration-300">{t('skills.tools')}</h3>
             </div>
             
             <div className="flex flex-wrap gap-3">
               {tools.map((tool, index) => (
                 <span 
                   key={index}
-                  className={`bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium hover:bg-green-200 hover:scale-110 transition-all duration-300 cursor-pointer ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
+                  className={`bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-4 py-2 rounded-full font-medium hover:bg-green-200 dark:hover:bg-green-800/50 hover:scale-110 transition-all duration-300 cursor-pointer ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
                   style={{transitionDelay: `${index * 100 + 700}ms`}}
                 >
                   {tool}
@@ -167,17 +167,17 @@ const Skills = () => {
           </div>
 
           {/* Languages */}
-          <div className={`bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="flex items-center gap-3 mb-8">
               <Globe className={`text-orange-600 transition-all duration-1000 delay-900 ${isVisible ? 'rotate-0 scale-100' : 'rotate-180 scale-0'}`} size={28} />
-              <h3 className="text-2xl font-bold text-gray-800">{t('skills.languages')}</h3>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white transition-colors duration-300">{t('skills.languages')}</h3>
             </div>
             
             <div className="space-y-4">
               {languages.map((lang, index) => (
-                <div key={index} className={`flex items-center justify-between p-4 bg-orange-50 rounded-xl border border-orange-100 hover:bg-orange-100 hover:scale-105 transition-all duration-300 cursor-pointer ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`} style={{transitionDelay: `${index * 200 + 900}ms`}}>
-                  <span className="font-semibold text-gray-800">{lang.name}</span>
-                  <span className="bg-orange-200 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                <div key={index} className={`flex items-center justify-between p-4 bg-orange-50 dark:bg-orange-900/20 rounded-xl border border-orange-100 dark:border-orange-800 hover:bg-orange-100 dark:hover:bg-orange-800/30 hover:scale-105 transition-all duration-300 cursor-pointer ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-5'}`} style={{transitionDelay: `${index * 200 + 900}ms`}}>
+                  <span className="font-semibold text-gray-800 dark:text-white transition-colors duration-300">{lang.name}</span>
+                  <span className="bg-orange-200 dark:bg-orange-700 text-orange-800 dark:text-orange-200 px-3 py-1 rounded-full text-sm font-medium transition-colors duration-300">
                     {lang.level}
                   </span>
                 </div>

@@ -65,10 +65,10 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-50">
+    <section id="projects" className="py-20 px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6 transition-colors duration-300">
             {t('projects.title')}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
@@ -79,7 +79,7 @@ const Projects = () => {
             const isExpanded = expandedProject === index;
             
             return (
-              <div key={index} className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div key={index} className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-200 dark:border-gray-700 overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 {/* Project Preview Card */}
                 <div 
                   className="p-8 cursor-pointer group"
@@ -91,11 +91,12 @@ const Projects = () => {
                         <Database className="text-blue-600 group-hover:scale-110 transition-transform duration-300" size={28} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                        <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 transition-colors duration-300">
                           {project.title}
                         </h3>
                         <p className="text-lg text-blue-600 font-semibold mb-3">{project.subtitle}</p>
                         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
                           <div className="flex items-center gap-2">
                             <Calendar size={16} />
                             <span className="font-medium">{project.period}</span>
@@ -105,7 +106,7 @@ const Projects = () => {
                             <span className="font-medium">{project.company}</span>
                           </div>
                         </div>
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
                           {project.shortDescription}
                         </p>
                       </div>
@@ -126,15 +127,15 @@ const Projects = () => {
 
                 {/* Expanded Details */}
                 <div className={`transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
-                  <div className="px-8 pb-8 border-t border-gray-100">
+                  <div className="px-8 pb-8 border-t border-gray-100 dark:border-gray-700">
                     <div className="pt-8">
-                      <p className="text-gray-600 leading-relaxed mb-8 text-lg">
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8 text-lg transition-colors duration-300">
                         {project.fullDescription}
                       </p>
 
                       {/* Tools Used */}
                       <div className="mb-8">
-                        <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2 transition-colors duration-300">
                           <ExternalLink size={18} className="text-blue-600" />
                           {t('projects.toolsUsed')}
                         </h4>
@@ -142,7 +143,7 @@ const Projects = () => {
                           {project.tools.map((tool, toolIndex) => (
                             <span 
                               key={toolIndex}
-                              className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 hover:scale-105 transition-all duration-300 cursor-pointer"
+                              className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 dark:hover:bg-blue-800/50 hover:scale-105 transition-all duration-300 cursor-pointer"
                             >
                               {tool}
                             </span>
@@ -152,14 +153,14 @@ const Projects = () => {
 
                       {/* Project Diagrams */}
                       <div className="mb-8">
-                        <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2 transition-colors duration-300">
                           <Image size={18} className="text-purple-600" />
                           {t('projects.diagrams')}
                         </h4>
                         <div className="grid md:grid-cols-2 gap-6">
                           {project.images.map((image, imageIndex) => (
-                            <div key={imageIndex} className="bg-gray-50 rounded-xl p-4 hover:bg-gray-100 transition-colors duration-300 group">
-                              <div className="aspect-video bg-white rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300 mb-3">
+                            <div key={imageIndex} className="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-300 group">
+                              <div className="aspect-video bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300 mb-3">
                                 <img 
                                   src={image.src}
                                   alt={image.alt}
@@ -167,7 +168,7 @@ const Projects = () => {
                                   onClick={() => window.open(image.src, '_blank')}
                                 />
                               </div>
-                              <h5 className="font-semibold text-gray-800 text-sm group-hover:text-purple-600 transition-colors duration-300">
+                              <h5 className="font-semibold text-gray-800 dark:text-white text-sm group-hover:text-purple-600 transition-colors duration-300">
                                 {image.title}
                               </h5>
                             </div>
@@ -177,7 +178,7 @@ const Projects = () => {
 
                       {/* GitHub Repository */}
                       <div className="mb-8">
-                        <h4 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2 transition-colors duration-300">
                           <Github size={18} className="text-gray-800" />
                           {t('projects.repository')}
                         </h4>
@@ -196,24 +197,24 @@ const Projects = () => {
                       {/* Contributions and Results */}
                       <div className="grid md:grid-cols-2 gap-8">
                         <div>
-                          <h4 className="text-xl font-bold text-gray-800 mb-4">{t('projects.myContribution')}</h4>
+                          <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4 transition-colors duration-300">{t('projects.myContribution')}</h4>
                           <div className="space-y-3">
                             {project.contributions.map((contribution, contribIndex) => (
                               <div key={contribIndex} className="flex items-start gap-3">
                                 <ChevronRight size={16} className="text-blue-600 mt-1 flex-shrink-0" />
-                                <span className="text-gray-600">{contribution}</span>
+                                <span className="text-gray-600 dark:text-gray-300 transition-colors duration-300">{contribution}</span>
                               </div>
                             ))}
                           </div>
                         </div>
 
                         <div>
-                          <h4 className="text-xl font-bold text-gray-800 mb-4">{t('projects.results')}</h4>
+                          <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-4 transition-colors duration-300">{t('projects.results')}</h4>
                           <div className="space-y-3">
                             {project.results.map((result, resultIndex) => (
                               <div key={resultIndex} className="flex items-start gap-3">
                                 <ChevronRight size={16} className="text-green-600 mt-1 flex-shrink-0" />
-                                <span className="text-gray-600">{result}</span>
+                                <span className="text-gray-600 dark:text-gray-300 transition-colors duration-300">{result}</span>
                               </div>
                             ))}
                           </div>
