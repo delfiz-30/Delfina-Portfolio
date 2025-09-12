@@ -77,6 +77,22 @@ const translations = {
     'education.eest.type': 'Formación Técnica',
     'education.eest.description': 'Formación técnica especializada en procesos químicos y análisis de laboratorio.',
     
+    // Certifications
+    'certifications.kpmg.title': 'KPMG - Programa Construyendo tu futuro',
+    'certifications.kmpg.period': 'Abril 2025 - Jun 2025',
+    'certifications.kmpg.description': 'Curso de Asistente Administrativo',
+    'certifications.kmpg.skills': ['Microsoft Teams', 'Outlook', 'Excel', 'Gestión del tiempo', 'Comunicación', 'Procesos internos'],
+    'certifications.data.title': 'Introducción a Data Analytics',
+    'certifications.data.provider': 'Chicas en Tecnología',
+    'certifications.data.period': 'Mar 2025',
+    'certifications.data.description': 'Análisis y visualización de datos',
+    'certifications.data.skills': ['Excel', 'Tableau', 'Proyecto en equipo', 'Problemática social'],
+    'certifications.js.title': 'Introducción a la Programación con JavaScript',
+    'certifications.js.provider': 'ADA ITW',
+    'certifications.js.period': 'Oct 2024 - Dic 2024',
+    'certifications.js.description': 'Fundamentos de programación',
+    'certifications.js.skills': ['JavaScript', 'Lógica de programación', 'Desarrollo de programas'],
+    
     // Projects
     'projects.title': 'Proyectos',
     'projects.database.title': 'Base de datos para portal de empleos',
@@ -196,6 +212,22 @@ const translations = {
     'education.eest.period': '2015 - 2021',
     'education.eest.type': 'Technical Training',
     'education.eest.description': 'Specialized technical training in chemical processes and laboratory analysis.',
+    
+    // Certifications
+    'certifications.kpmg.title': 'KPMG - Building Your Future Program',
+    'certifications.kmpg.period': 'April 2025 - Jun 2025',
+    'certifications.kmpg.description': 'Administrative Assistant Course',
+    'certifications.kmpg.skills': ['Microsoft Teams', 'Outlook', 'Excel', 'Time management', 'Communication', 'Internal processes'],
+    'certifications.data.title': 'Introduction to Data Analytics',
+    'certifications.data.provider': 'Chicas en Tecnología',
+    'certifications.data.period': 'Mar 2025',
+    'certifications.data.description': 'Data analysis and visualization',
+    'certifications.data.skills': ['Excel', 'Tableau', 'Team project', 'Social issues'],
+    'certifications.js.title': 'Introduction to Programming with JavaScript',
+    'certifications.js.provider': 'ADA ITW',
+    'certifications.js.period': 'Oct 2024 - Dec 2024',
+    'certifications.js.description': 'Programming fundamentals',
+    'certifications.js.skills': ['JavaScript', 'Programming logic', 'Program development'],
     
     // Projects
     'projects.title': 'Projects',

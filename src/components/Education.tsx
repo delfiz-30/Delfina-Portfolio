@@ -43,24 +43,24 @@ const Education = () => {
 
   const certifications = [
     {
-      title: "KPMG - Programa Construyendo tu futuro",
-      period: "Abril 2025 - Jun 2025",
-      description: "Curso de Asistente Administrativo",
-      skills: ["Microsoft Teams", "Outlook", "Excel", "Gestión del tiempo", "Comunicación", "Procesos internos"]
+      title: t("certifications.kpmg.title"),
+      period: t("certifications.kmpg.period"),
+      description: t("certifications.kmpg.description"),
+      skills: t("certifications.kmpg.skills")
     },
     {
-      title: "Introducción a Data Analytics",
-      provider: "Chicas en Tecnología",
-      period: "Mar 2025",
-      description: "Análisis y visualización de datos",
-      skills: ["Excel", "Tableau", "Proyecto en equipo", "Problemática social"]
+      title: t("certifications.data.title"),
+      provider: t("certifications.data.provider"),
+      period: t("certifications.data.period"),
+      description: t("certifications.data.description"),
+      skills: t("certifications.data.skills")
     },
     {
-      title: "Introducción a la Programación con JavaScript",
-      provider: "ADA ITW",
-      period: "Oct 2024 - Dic 2024",
-      description: "Fundamentos de programación",
-      skills: ["JavaScript", "Lógica de programación", "Desarrollo de programas"]
+      title: t("certifications.js.title"),
+      provider: t("certifications.js.provider"),
+      period: t("certifications.js.period"),
+      description: t("certifications.js.description"),
+      skills: t("certifications.js.skills")
     }
   ];
 
