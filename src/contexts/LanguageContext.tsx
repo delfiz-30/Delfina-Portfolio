@@ -79,7 +79,7 @@ const translations = {
     
     // Certifications
     'certifications.kpmg.title': 'KPMG - Programa Construyendo tu futuro',
-    'certifications.kmpg.period': 'Abril 2025 - Jun 2025',
+    'certifications.kmpg.period': 'Abr 2025 - Jun 2025',
     'certifications.kmpg.description': 'Curso de Asistente Administrativo',
     'certifications.kmpg.skills': ['Microsoft Teams', 'Outlook', 'Excel', 'Gestión del tiempo', 'Comunicación', 'Procesos internos'],
     'certifications.data.title': 'Introducción a Data Analytics',
@@ -215,7 +215,7 @@ const translations = {
     
     // Certifications
     'certifications.kpmg.title': 'KPMG - Building Your Future Program',
-    'certifications.kmpg.period': 'April 2025 - Jun 2025',
+    'certifications.kmpg.period': 'Apr 2025 - Jun 2025',
     'certifications.kmpg.description': 'Administrative Assistant Course',
     'certifications.kmpg.skills': ['Microsoft Teams', 'Outlook', 'Excel', 'Time management', 'Communication', 'Internal processes'],
     'certifications.data.title': 'Introduction to Data Analytics',
